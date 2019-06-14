@@ -13,7 +13,8 @@ import sys
 import java.util.Arrays
 import java.io.File
 import shutil
-from ij import IJ
+from ij import IJ, ImagePlus, ImageStack
+from ij.process import ImageConverter
 from java.io import File
 from ij.io import FileSaver 
 from ij.io import OpenDialog
@@ -25,12 +26,12 @@ from register_virtual_stack import Register_Virtual_Stack_MT
 from register_virtual_stack import Transform_Virtual_Stack_MT
 
 # define some parameters
-nTiles = 9
+nTiles = 16
 overlap = 32
 normalizeInput = True
-percentileBottom = 3.0
+percentileBottom = 0.5
 percentileTop = 99.8
-clip = False
+clip = True
 # EM = electron microscopic image
 # rLM = real light microscopic image (ground truth) with chromatin channel
 # pLM = predictet light microscopic image
@@ -55,14 +56,33 @@ os.mkdir(COIinputdir)
 COIoutputdir = os.path.join(workdir, "COIoutput")
 os.mkdir(COIoutputdir)
 
+# open EM image
+EM = IJ.openImage(EMfilepath)
+
+# resize EM image
+ip = EM.getProcessor()
+width = ip.getWidth()
+height = ip.getHeight()
+ip.resize(256, 256)
+EM.setProcessor (ip)
+ImageConverter(EM).convertToGray8()
+
+EMstack = ImageStack(EM.getWidth(), EM.getHeight())
+EMstack.addSlice(EM.getProcessor())
+EMstack.addSlice(EM.getProcessor())
+EM = EMstack
+saveEMfilepath = os.path.join(workdir, "input", "EM.tif")
+fs = FileSaver(EM) 
+fs.saveAsTiffStack(saveEMfilepath)
+
 # create path to save pLM image
 savepLMfilepath = os.path.join(workdir, "input", "pLM.tif")
 
 print("(-   )preprocessing done")
 ############################################ predict image
 # run plugin CSBDeep (https://github.com/CSBDeep/CSBDeep_fiji/blob/master/script/CARE_generic.py)
-def runNetwork(EMfilepath, savepLMfilepath):
-	imp = io.open(EMfilepath)
+def runNetwork(saveEMfilepath, savepLMfilepath):
+	imp = io.open(saveEMfilepath)
 	mymod = (command.run(GenericNetwork, False,
 		"input", imp,
 		"nTiles", nTiles,
@@ -78,10 +98,16 @@ def runNetwork(EMfilepath, savepLMfilepath):
 
 runNetwork(EMfilepath, savepLMfilepath)
 
-
-# open and display precicted image
-EM = IJ.openImage(EMfilepath)
+# open pLM image
 pLM = IJ.openImage(savepLMfilepath)
+
+# resize pLM image
+ip = pLM.getProcessor()
+ip.resize(width, height)
+pLM.setProcessor (ip)
+IJ.saveAsTiff(pLM, savepLMfilepath)
+
+# display precicted image
 
 gd = GenericDialogPlus("Options")  
 gd.addMessage("groundtruth SEM image:")
