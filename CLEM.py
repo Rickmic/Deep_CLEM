@@ -63,17 +63,20 @@ EM = IJ.openImage(EMfilepath)
 ip = EM.getProcessor()
 width = ip.getWidth()
 height = ip.getHeight()
-ip.resize(256, 256)
-EM.setProcessor (ip)
+
+EM.setProcessor (EM.getTitle(), EM.getProcessor().resize(256, 256))
 ImageConverter(EM).convertToGray8()
 
+
 EMstack = ImageStack(EM.getWidth(), EM.getHeight())
-EMstack.addSlice(EM.getProcessor())
-EMstack.addSlice(EM.getProcessor())
-EM = EMstack
-saveEMfilepath = os.path.join(workdir, "input", "EM.tif")
+EMstack.addSlice(str(1), EM.getProcessor())
+EMstack.addSlice(str(2), EM.getProcessor())
+EM = ImagePlus(EM.getTitle(), EMstack)
+
+
+saveEMfilepath = os.path.join(workdir, "EM.tif")
 fs = FileSaver(EM) 
-fs.saveAsTiffStack(saveEMfilepath)
+fs.saveAsTiff(saveEMfilepath)
 
 # create path to save pLM image
 savepLMfilepath = os.path.join(workdir, "input", "pLM.tif")
@@ -96,7 +99,7 @@ def runNetwork(saveEMfilepath, savepLMfilepath):
 	myoutput = mymod.getOutput("output")
 	io.save(myoutput, savepLMfilepath)
 
-runNetwork(EMfilepath, savepLMfilepath)
+runNetwork(saveEMfilepath, savepLMfilepath)
 
 # open pLM image
 pLM = IJ.openImage(savepLMfilepath)
