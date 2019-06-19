@@ -59,6 +59,9 @@ os.mkdir(COIoutputdir)
 # open EM image
 EM = IJ.openImage(EMfilepath)
 
+# equalize histogramm
+IJ.run(EM, "Enhance Contrast...", "saturated=0.3 equalize")
+
 # resize EM image
 ip = EM.getProcessor()
 width = ip.getWidth()
@@ -105,10 +108,10 @@ runNetwork(saveEMfilepath, savepLMfilepath)
 pLM = IJ.openImage(savepLMfilepath)
 
 # resize pLM image
-ip = pLM.getProcessor()
-ip.resize(width, height)
-pLM.setProcessor (ip)
-IJ.saveAsTiff(pLM, savepLMfilepath)
+#ip = pLM.getProcessor()
+#ip.resize(width, height)
+#pLM.setProcessor (ip)
+#IJ.saveAsTiff(pLM, savepLMfilepath)
 
 # display precicted image
 
