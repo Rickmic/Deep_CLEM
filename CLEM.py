@@ -59,21 +59,27 @@ os.mkdir(COIoutputdir)
 # open EM image
 EM = IJ.openImage(EMfilepath)
 
+# equalize histogramm
+IJ.run(EM, "Enhance Contrast...", "saturated=0.3 equalize")
+
 # resize EM image
 ip = EM.getProcessor()
 width = ip.getWidth()
 height = ip.getHeight()
-ip.resize(256, 256)
-EM.setProcessor (ip)
+
+EM.setProcessor (EM.getTitle(), EM.getProcessor().resize(256, 256))
 ImageConverter(EM).convertToGray8()
 
+
 EMstack = ImageStack(EM.getWidth(), EM.getHeight())
-EMstack.addSlice(EM.getProcessor())
-EMstack.addSlice(EM.getProcessor())
-EM = EMstack
-saveEMfilepath = os.path.join(workdir, "input", "EM.tif")
+EMstack.addSlice(str(1), EM.getProcessor())
+EMstack.addSlice(str(2), EM.getProcessor())
+EM = ImagePlus(EM.getTitle(), EMstack)
+
+
+saveEMfilepath = os.path.join(workdir, "EM.tif")
 fs = FileSaver(EM) 
-fs.saveAsTiffStack(saveEMfilepath)
+fs.saveAsTiff(saveEMfilepath)
 
 # create path to save pLM image
 savepLMfilepath = os.path.join(workdir, "input", "pLM.tif")
@@ -96,16 +102,11 @@ def runNetwork(saveEMfilepath, savepLMfilepath):
 	myoutput = mymod.getOutput("output")
 	io.save(myoutput, savepLMfilepath)
 
-runNetwork(EMfilepath, savepLMfilepath)
+runNetwork(saveEMfilepath, savepLMfilepath)
 
 # open pLM image
 pLM = IJ.openImage(savepLMfilepath)
 
-# resize pLM image
-ip = pLM.getProcessor()
-ip.resize(width, height)
-pLM.setProcessor (ip)
-IJ.saveAsTiff(pLM, savepLMfilepath)
 
 # display precicted image
 
@@ -115,6 +116,11 @@ gd.addImage(EM)
 gd.addMessage("prediction Chromatin:")
 gd.addImage(pLM)
 gd.showDialog() 
+
+# resize pLM image
+pLM.setProcessor (pLM.getTitle(), pLM.getProcessor().resize(width, height))
+fs = FileSaver(pLM) 
+fs.saveAsTiff(savepLMfilepath)
 
 # save rLMimage
 rLM = IJ.openImage(rLMfilepath)
@@ -186,8 +192,10 @@ for channel in listOfPathslist:
 	clmXmlPath= os.path.join(transform, cLMxmlName)
 	shutil.copy(rlmXmlPath, clmXmlPath) 
 
-# remove rLM.xml file in transform
-os.remove(rlmXmlPath)
+# move and rename rLM.xml transformation_LM_image.xml
+#os.remove(rlmXmlPath)
+transformation_LM_imageXmlPath = os.path.join(workdir, "transformation_LM_image.xml") 
+os.rename(rlmXmlPath, transformation_LM_imageXmlPath)
 
 COIinput = COIinputdir + os.sep
 source_dir = COIinput
@@ -200,6 +208,15 @@ Transform_Virtual_Stack_MT.exec(source_dir, target_dir, transf_dir, interpolate)
 # close generated image stack
 stack = IJ.getImage()
 stack.close()
+
+# clean up working directory
+
+# remove temp files
+shutil.rmtree(COIinputdir)
+shutil.rmtree(inputdir)
+shutil.rmtree(transformdir)
+os.remove(saveEMfilepath)
+
 
 print("(----)everything done")
 
