@@ -29,7 +29,7 @@ Now you should be able to run the plugin (Plugins > Deep_CLEM)
 
 **6. 
 
-![UI](/assets/Bildschirmfoto vom 2019-06-28 13-41-35.png)
+![UI](../assets/img1.png?raw=true)
 
 
 # Train your own network
