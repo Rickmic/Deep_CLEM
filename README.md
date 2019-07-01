@@ -25,11 +25,13 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 
 **5. Restart Fiji**
 
-Now you should be able to run the plugin (Plugins > Deep_CLEM)
+Now you should be able to finde the plugin (Plugins > Deep_CLEM)
 
-**6. 
+**6. Start Deep_CLEM
 
-![UI](../assets/img1.png?raw=true)
+If you run the plugin Deep_CLEM, the following window should be visible:
+
+![UI](../assets/GUI1.png?raw=true)
 
 
 # Train your own network
