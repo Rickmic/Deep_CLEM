@@ -60,9 +60,10 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
 
 
   <ul>
-    <li class="justify">
+    <li>
+      <p align="center"> 
       After a short time (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted ligth microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK. 
-    </li></br>
+      </p></li></br>
     <li>
       If the plugin is ready you can see Command finished: Deep CLEM in the Status Bar.
     </li></br>
