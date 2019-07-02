@@ -75,7 +75,7 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
   </li>
   <li>
     <p align="justify"> 
-      If the plugin is ready you can see Command finished: Deep CLEM in the Status Bar.
+      If the plugin is ready you can see <i>Command finished: Deep CLEM</i> in the Status Bar.
     </p>
   </li>
     <li>
