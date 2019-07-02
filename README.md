@@ -31,7 +31,9 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
 
 If you run the plugin Deep_CLEM, the following window should be visible:
 
-![UI](../assets/GUI1.png?raw=true?style=centerme)
+<p align="center"> 
+  <img src="../assets/GUI1.png">
+</p>
 
 <p align="justify">
 Select an electron microscopic image, a light microscopic image, several light microscopic channels of interest, a working           directory and a model file. After that select Run.
@@ -43,8 +45,9 @@ If you have selected show process dialog, the process window of CSBDeep will be 
 After a short time (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted ligth microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK.
 </p>
 
-![UI2](../assets/GUI2.png?style=centerme)
-
+<p align="center"> 
+  <img src="../assets/GUI2.png">
+</p>
 
 If the plugin is ready you can see Command finished: Deep CLEM in the Status Bar.
 <p align="justify">
