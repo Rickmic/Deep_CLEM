@@ -85,7 +85,7 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
     </li>
     <li>
       <p align="justify">
-        You can use the xml file for example with the Fiji plugin [Transform Virtual Stack Slices](https://imagej.net/Transform_Virtual_Stack_Slices) to repeat the transformation with another, not selected image.
+        You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another, not selected image.
       </p>
     </li>
   </ul>
