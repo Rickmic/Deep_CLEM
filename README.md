@@ -43,7 +43,7 @@ If you have selected show process dialog, the process window of CSBDeep will be 
 After a short time (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted ligth microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK.
 </p>
 
-![UI](../assets/GUI2.png?raw=true?style=centerme)
+![UI2](../assets/GUI2.png?style=centerme)
 
 
 If the plugin is ready you can see Command finished: Deep CLEM in the Status Bar.
