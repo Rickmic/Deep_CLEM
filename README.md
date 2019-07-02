@@ -80,7 +80,7 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
   </li>
     <li>
       <p align="justify"> 
-        Deep CLEM has created two directories and one xml file in the working directory. The directory _COIoutput_ contains the images of the channels of interest, that are already aligned to the electron microscopic image. The Directory _output_ contains the predicted light microscopic image (pLM.tif) and the light microscopic image of the chromatin channel (rLM.tif). The file _transformation_LM_image.xml_ contains all transformations, that are made to the light microscopic images to align them to the electron microscopic images.
+        Deep CLEM has created two directories and one xml file in the working directory. The directory <i>COIoutput</i> contains the images of the channels of interest, that are already aligned to the electron microscopic image. The Directory <i>output</i> contains the predicted light microscopic image (pLM.tif) and the light microscopic image of the chromatin channel (rLM.tif). The file <i>transformation_LM_image.xml</i> contains all transformations, that are made to the light microscopic images to align them to the electron microscopic images.
       </p>
     </li>
     <li>
