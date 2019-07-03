@@ -97,19 +97,25 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
 **1. Set up the python environment**
 
 
-<ul>
-  <li>
-    <p align="justify">
-      Install [Anaconda](https://www.anaconda.com/distribution/)
-    </p>
-  </li>
-  <li>
-    <p align="justify">
-      Install [Anaconda](https://www.anaconda.com/distribution/) 
-    </p>
-  </li>
-</ul>
 
+* Install [Anaconda](https://www.anaconda.com/distribution/)
+ 
+* Clone this repo if you haven't done this yet.
+
+* Navigate into the directory Deep_CLEM
+
+  ```sh
+  cd Deep_CLEM
+  ```
+  
+* create a new conda environment with all requirements for the two python scripts
+  
+  ```sh
+  conda activate
+  conda env create --file DeepCLEM.yml
+  conda activate DeepCLEM
+  ```
+   
 
 
 **2. Preprocess images**
