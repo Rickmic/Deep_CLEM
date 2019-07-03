@@ -115,6 +115,8 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
   conda env create --file DeepCLEM.yml
   conda activate DeepCLEM
   ```
+  <p align="justify">
+  This environment was tested under _Ubuntu 16.04.5 LTS_ with CUDA version _9.2.148_. If you use another CUDA version you may   have to install a different tensorflow version as in the yml file.</p>
    
 
 
