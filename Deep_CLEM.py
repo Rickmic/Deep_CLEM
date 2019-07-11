@@ -20,6 +20,8 @@ from ij.io import FileSaver
 from ij.io import OpenDialog
 from ij.io import DirectoryChooser 
 from ij.gui import GenericDialog
+from ij.plugin import ChannelSplitter
+from ij.plugin import RGBStackMerge, RGBStackConverter
 from fiji.util.gui import GenericDialogPlus 
 from de.csbdresden.csbdeep.commands import GenericNetwork
 from register_virtual_stack import Register_Virtual_Stack_MT
@@ -44,17 +46,26 @@ EMfilepath = EMfilepath.toString()
 rLMfilepath = rLMfilepath.toString()
 workdir = workdir.toString()
 
-# create input/output/transform/channelOfInterest folder in workdir
+# create a couple of folder in workdir
+# for prediction
 inputdir = os.path.join(workdir, "input")
 os.mkdir(inputdir)
 outputdir = os.path.join(workdir, "output")
+# for alignment
 os.mkdir(outputdir)
 transformdir = os.path.join(workdir, "transform")
 os.mkdir(transformdir)
 COIinputdir = os.path.join(workdir, "COIinput")
 os.mkdir(COIinputdir)
 COIoutputdir = os.path.join(workdir, "COIoutput")
+# for transformation of EM image
 os.mkdir(COIoutputdir)
+transformEMdir = os.path.join(workdir, "transformEM")
+os.mkdir(transformEMdir)
+EMindir = os.path.join(workdir, "EMin")
+os.mkdir(EMindir)
+EMoutdir = os.path.join(workdir, "EMout")
+os.mkdir(EMoutdir)
 
 # open EM image
 EM = IJ.openImage(EMfilepath)
@@ -164,59 +175,136 @@ stack = IJ.getImage()
 stack.close()
 
 print("(--- )alignment done")
-############################################ process channels of interest
+############################################ create overlay images
 
+
+### preprocess COI
 # java.io.File to list
 listOfPathslist = listOfPaths.tolist()
-
-# remove pLM.xml file in transform
-plmXmlPath= os.path.join(transform, "pLM.xml")
-os.remove(plmXmlPath)
-
-#create rlmXmlPath
-rlmXmlPath= os.path.join(transform, "rLM.xml")
+rlmXmlPath= os.path.join(transform, "rLM.xml") 
 i = 0
-
 for channel in listOfPathslist:
 	# save cLM image
 	cLMfilepath = listOfPathslist[i]
 	cLMfilepath = str(cLMfilepath)
-	cLM = IJ.openImage(cLMfilepath)
 	cLMname = os.path.basename(cLMfilepath)
-	savecLMfilepath = os.path.join(workdir, "COIinput", cLMname)
+	filename, file_extension = os.path.splitext(cLMname)
+	cLM = IJ.openImage(cLMfilepath)
+	savecLMfilepath = os.path.join(workdir, "COIinput", filename + ".tif")
 	fs = FileSaver(cLM) 
 	fs.saveAsTiff(savecLMfilepath)
 	#duplicate rLM.xml file in transform
 	i = i +1
-	cLMxmlName = str(i) + "LM.xml"
+	cLMxmlName = filename + ".xml"
 	clmXmlPath= os.path.join(transform, cLMxmlName)
 	shutil.copy(rlmXmlPath, clmXmlPath) 
 
 # move and rename rLM.xml transformation_LM_image.xml
-#os.remove(rlmXmlPath)
-transformation_LM_imageXmlPath = os.path.join(workdir, "transformation_LM_image.xml") 
-os.rename(rlmXmlPath, transformation_LM_imageXmlPath)
+transformation_LM_imageXmlPath = os.path.join(workdir, "transformation_LM_image.xml")
+shutil.copy(rlmXmlPath, transformation_LM_imageXmlPath)
 
+### preprocess EM image
+
+
+# move pLM.xml and copy rLM.xml file in transformEM -> EM image must be transformed during transformation of rLM. Otherwise the size wouldn't fit.
+plmXmlPath= os.path.join(transform, "pLM.xml")
+shutil.move(plmXmlPath, os.path.join(transform, "EM.xml")) # move and rename
+#shutil.copy(rlmXmlPath, transformEMdir) # copy
+
+# save original EM image for transformation
+EM = IJ.openImage(EMfilepath)
+fs = FileSaver(EM) 
+fs.saveAsTiff(os.path.join(COIinputdir, "EM.tif"))
+
+# copy rLM image for transformation
+saverLMpath = os.path.join(outputdir, "rLM.tif")
+shutil.copy(saverLMpath, os.path.join(COIinputdir, "rLM.tif")) # copy
+
+# run plugin Transform Virtual Stack (https://javadoc.scijava.org/Fiji/register_virtual_stack/Transform_Virtual_Stack_MT.html)
+#source_dir = EMindir + os.sep
+#target_dir = EMoutdir + os.sep
+#transf_dir = transformEMdir + os.sep
+#print(source_dir)
+#print(target_dir)
+#print(transf_dir)
+#interpolate = True
+#Transform_Virtual_Stack_MT.exec(source_dir, target_dir, transf_dir, interpolate)
+# close generated image stack
+#stack = IJ.getImage()
+#stack.close()
+
+
+# run plugin Transform Virtual Stack (https://javadoc.scijava.org/Fiji/register_virtual_stack/Transform_Virtual_Stack_MT.html)
 COIinput = COIinputdir + os.sep
 source_dir = COIinput
 COIoutput = COIoutputdir + os.sep
 target_dir = COIoutput
-transf_dir = transform # defined in align pLM and rLM image
+transf_dir = transform 
 interpolate = True
-# run plugin Transform Virtual Stack (https://javadoc.scijava.org/Fiji/register_virtual_stack/Transform_Virtual_Stack_MT.html)
 Transform_Virtual_Stack_MT.exec(source_dir, target_dir, transf_dir, interpolate)
 # close generated image stack
 stack = IJ.getImage()
 stack.close()
 
+### overlay EM and rLM image
+# transformed EM to 8 bit
+EM = IJ.openImage(os.path.join(COIoutput, "EM.tif"))
+IJ.run(EM, "8-bit", "")
+# overwrite EM stack with transformed EM image
+fs = FileSaver(EM) 
+fs.saveAsTiff(saveEMfilepath)
+# open EM image as ImagePlus for merging channel
+EM = ImagePlus(saveEMfilepath)
+# split rLM image in different channels
+saverLMpath = os.path.join(COIoutput, "rLM.tif")
+rLM = IJ.openImage(saverLMpath)
+R, G, B = ChannelSplitter.split(rLM)
+overlay = RGBStackMerge.mergeChannels([None, None, B, EM, None, None, None], True) # Change R,G, B if the chromatin channel is a different one.
+# If you want a different color for the chromatin in the overlay image, change the  position of the letter R,G,B, 
+# e.g. [B, None, None, EM, None, None, None] for displaying chromatin in the red channel.
+RGBStackConverter.convertToRGB(overlay)
+saveoverlaypath = os.path.join(workdir, "EMoverlayChromatin.tif")
+fs = FileSaver(overlay) 
+fs.saveAsTiff(saveoverlaypath)
+
 # clean up working directory
 
 # remove temp files
-shutil.rmtree(COIinputdir)
-shutil.rmtree(inputdir)
-shutil.rmtree(transformdir)
-os.remove(saveEMfilepath)
+#shutil.copy(saverLMpath, os.path.join(workdir, "chromatin.tif"))
+#shutil.rmtree(COIinputdir)
+#shutil.rmtree(inputdir)
+#shutil.rmtree(outputdir)
+#shutil.rmtree(transformdir)
+
 
 
 print("(----)everything done")
 
+#stuff
+
+# get size of aligned image
+#savepLMfilepath = os.path.join(outputdir, "pLM.tif")
+#pLM = IJ.openImage(savepLMfilepath)
+#ip = pLM.getProcessor()
+#width = ip.getWidth()
+#height = ip.getHeight()
+
+# get set canvas size of EM image
+EM = IJ.openImage(EMfilepath)
+#w = str(width)
+#h = str(height)
+#args = "width="+w+" height="+h+" position=Center"
+#IJ.run(EM, "Canvas Size...", args);
+fs = FileSaver(EM) 
+fs.saveAsTiff(saveEMfilepath)
+
+
+
+
+
+
+
+
+
+# create rlmXmlPath
+rlmXmlPath= os.path.join(transform, "rLM.xml")
