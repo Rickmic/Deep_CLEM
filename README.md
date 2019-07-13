@@ -4,30 +4,72 @@
 
 **1. Install Fiji**
 
-[source](https://imagej.net/Fiji/Downloads)
-
+<ul>
+  <p align="justify">
+    <a href="https://imagej.net/Fiji/Downloads">Source</a>
+  </p>
+</ul>
 
 **2. Install Fiji plugin CSBDeep**
 
-[source](https://github.com/CSBDeep/CSBDeep_website/wiki/CSBDeep-in-Fiji-%E2%80%93-Installation)
 
+<ul>
+  <p align="justify">
+    <a href="https://github.com/CSBDeep/CSBDeep_website/wiki/CSBDeep-in-Fiji-%E2%80%93-Installation">Source</a>
+  </p>
+</ul>
 
-**3. Clone this repo**
+**3. Clone this repo:**
+
+**3.1 Linux and macos**
 
 ```sh
 git clone https://github.com/Rickmic/Deep_CLEM.git
 cd Deep_CLEM
 ```
 
+**3.2 Windows**
+
+<ul>
+  <p align="justify">
+    <li>
+      click the green button <i>Clone or Download</i> and Select <i>Download ZIP</i>
+    </li>
+    <li>
+      save the ZIP file in a directory of your choice
+    </li>
+    <li>
+      open the directory with the explorer and unzip the file
+    </li>
+    <li>
+      open the unziped directory 
+    </li>
+  </p>
+</ul>
+
 **4. Copy Deep_CLEM.py into your Fiji.app/plugins directory**
+
+**4.1 Linux and macos**
 
 ```sh
 cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 ```
 
+**4.2 Windows**
+
+<ul>
+  <p align="justify">
+    copy the file <i>Deep_CLEM.py</i> in your Fiji plugin folder (/Fiji.app/plugins/)
+  </p>
+</ul>
+
 **5. Restart Fiji**
 
-Now you should be able to finde the plugin (Plugins > Deep_CLEM)
+<ul>
+  <p align="justify">
+    Now you should be able to finde the plugin (Plugins > Deep_CLEM)
+  </p>
+</ul>
 
 **6. Start Deep_CLEM**
 
@@ -55,8 +97,28 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
   </li>
   <li>
     <p align="justify">
-      If you have selected show process dialog, the process window of CSBDeep will be visible.</li>
+      The input images must fullfill the following creteria:
+      <li>
+        electron microscopic image should look like the testing image <i>EM.png</i>
+      <li>
+        either a <b>PNG</b> or an <b>TIF</b> file
+      </li>
+      <li>
+        at least <b>two</b> matching <b>nucleoli</b> in chromatin channel and electron microscopic image
+      </li>
+      <li>
+        all light microscopic channels should have the <b>same dimensions</b>
+      </li>
+      <li>
+        select <b>at least one image as Channel of interest</b>, otherwise you will be asked to select one during running the plugin
+      </li>
     </p>
+  </li>
+  <li>
+    <p align="justify">
+      If you have selected show process dialog, the process window of CSBDeep will be visible.
+    </p>
+  </li>
   </li>
 </ul>
 
@@ -96,35 +158,55 @@ Now you should be able to finde the plugin (Plugins > Deep_CLEM)
 
 **1. Set up the python environment**
 
+<ul>
+  <p align="justify">
+    <li>
+      Install <a href="https://www.anaconda.com/distribution/">Anaconda</a>
+    </li>
+    <li>
+      Clone this repo if you haven't done this yet.
+    </li>
+    <li>
+      Navigate into the directory Deep_CLEM
+    </li>
+  </p>
+</ul>
 
-
-* Install [Anaconda](https://www.anaconda.com/distribution/)
- 
-* Clone this repo if you haven't done this yet.
-
-* Navigate into the directory Deep_CLEM
-
-  ```sh
+```sh
   cd Deep_CLEM
   ```
-  
-* create a new conda environment with all requirements for the two python scripts
-  
+<ul>
+  <p align="justify">
+    <li>
+      create a new conda environment with all requirements for the two python scripts
+    </li>
+  </p>
+</ul>
+
   ```sh
   conda activate
   conda env create --file DeepCLEM.yml
   conda activate DeepCLEM
   ```
+  
+<ul>
   <p align="justify">
-  This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may   have to install a different tensorflow version as in the yml file.</p>
-   
-
+    This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may   have to install a different tensorflow version as in the yml file.
+  </p>
+</ul>
 
 **2. Preprocess images**
 
-Preprocess your images for training with the jupyter notebook _load_data.ipynb._ This jupyter notebokk script is based on [this script](https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb)
-
+<ul>
+  <p align="justify">
+    Preprocess your images for training with the jupyter notebook _load_data.ipynb._ This jupyter notebokk script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>
+  </p>
+</ul>
 
 **3. Train network**
 
-Train your network with the jupyter notebok _train_network.ipynb_, that is based on [this script](https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb)
+<ul>
+  <p align="justify">
+    Train your network with the jupyter notebok _train_network.ipynb_, that is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>
+  </p>
+</ul>
