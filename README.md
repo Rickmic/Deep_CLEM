@@ -38,7 +38,7 @@ cd Deep_CLEM
       save the ZIP file in a directory of your choice
     </li>
     <li>
-      open the directory with the explorer and unzip the file
+      open the directory with an explorer and unzip the file
     </li>
     <li>
       open the unziped directory 
@@ -87,7 +87,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify">
   <ul>
     <li>
-      Select an electron microscopic image, a light microscopic image, several light microscopic channels of interest, a   working directory and a model file. After that select Run.
+      Select an electron microscopic image, a light microscopic image, several light microscopic channels of interest, a   working directory and a model file. After that select Run. 
     </li>
     <li>
       The input images must fullfill the following creteria:
