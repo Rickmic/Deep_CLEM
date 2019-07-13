@@ -56,30 +56,26 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 
 #### 4.2 Windows
 
-<ul>
-  <p align="justify">
-    copy the file <i>Deep_CLEM.py</i> in your Fiji plugin folder (/Fiji.app/plugins/)
-  </p>
-</ul>
+<p align="justify">
+  copy the file <i>Deep_CLEM.py</i> in your Fiji plugin folder (/Fiji.app/plugins/)
+</p>
 
 ### 5. Restart Fiji
 
-<ul>
-  <p align="justify">
-    Now you should be able to finde the plugin (Plugins > Deep_CLEM)
-  </p>
-</ul>
+<p align="justify">
+  Now you should be able to finde the plugin (Plugins > Deep_CLEM)
+</p>
 
 ### 6. Start Deep_CLEM
 
 
-<ul>
-  <li>
-    <p align="justify">
+<p align="justify">
+  <ul>
+    <li>
       If you run the plugin Deep_CLEM, the following window should be visible:
-    </p>
-  </li>
-</ul>
+    </li>
+  </ul>
+</p>
 
 
 
@@ -126,28 +122,22 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 </p>
 
 
-<ul>
-  <li>
-    <p align="justify"> 
-      After a short time (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted ligth microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK. 
-    </p>
-  </li>
-  <li>
-    <p align="justify"> 
-      If the plugin is ready you can see <i>Command finished: Deep CLEM</i> in the Status Bar.
-    </p>
-  </li>
+<p align="justify"> 
+  <ul>
     <li>
-      <p align="justify"> 
-        Deep CLEM has created two directories and one xml file in the working directory. The directory <i>COIoutput</i> contains the images of the channels of interest, that are already aligned to the electron microscopic image. The Directory <i>output</i> contains the predicted light microscopic image (pLM.tif) and the light microscopic image of the chromatin channel (rLM.tif). The file <i>transformation_LM_image.xml</i> contains all transformations, that are made to the light microscopic images to align them to the electron microscopic images.
-      </p>
+      After a short time (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted ligth microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK. 
+    </li
+    <li>
+      If the plugin is ready you can see <i>Command finished: Deep CLEM</i> in the Status Bar.
     </li>
     <li>
-      <p align="justify">
-        You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another, not selected image.
-      </p>
+      Deep CLEM has created two directories and one xml file in the working directory. The directory <i>COIoutput</i> contains the images of the channels of interest, that are already aligned to the electron microscopic image. The Directory <i>output</i> contains the predicted light microscopic image (pLM.tif) and the light microscopic image of the chromatin channel (rLM.tif). The file <i>transformation_LM_image.xml</i> contains all transformations, that are made to the light microscopic images to align them to the electron microscopic images.
+    </li>
+    <li>
+      You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another, not selected image.
     </li>
   </ul>
+</p>
 
 
 
@@ -155,8 +145,8 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 
 ### 1. Set up the python environment
 
-<ul>
-  <p align="justify">
+<p align="justify">
+  <ul>
     <li>
       Install <a href="https://www.anaconda.com/distribution/">Anaconda</a>
     </li>
@@ -166,19 +156,19 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
     <li>
       Navigate into the directory Deep_CLEM
     </li>
-  </p>
-</ul>
+  </ul>
+</p>
 
 ```sh
   cd Deep_CLEM
   ```
-<ul>
-  <p align="justify">
+<p align="justify">
+  <ul>
     <li>
       create a new conda environment with all requirements for the two python scripts
     </li>
-  </p>
-</ul>
+  </ul>
+</p>
 
   ```sh
   conda activate
@@ -186,24 +176,19 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   conda activate DeepCLEM
   ```
   
-<ul>
-  <p align="justify">
-    This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may   have to install a different tensorflow version as in the yml file.
-  </p>
-</ul>
+<p align="justify">
+  This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may   have to install a different tensorflow version as in the yml file.
+</p>
+
 
 ### 2. Preprocess images
 
-<ul>
-  <p align="justify">
-    Preprocess your images for training with the jupyter notebook _load_data.ipynb._ This jupyter notebokk script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>
-  </p>
-</ul>
+<p align="justify">
+  Preprocess your images for training with the jupyter notebook _load_data.ipynb._ This jupyter notebokk script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>
+</p>
 
 ### 3. Train network
 
-<ul>
-  <p align="justify">
-    Train your network with the jupyter notebok _train_network.ipynb_, that is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>
-  </p>
-</ul>
+<p align="justify">
+  Train your network with the jupyter notebok _train_network.ipynb_, that is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>
+</p>
