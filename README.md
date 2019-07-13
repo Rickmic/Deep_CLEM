@@ -100,24 +100,27 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       The input images must fullfill the following creteria:
     </p>
   </li>
-    <p align="justify; margin-left: 20em; padding-left: 20em">
-      <li>
-        electron microscopic image should look like the testing image <i>EM.png</i>
-      </li>
-      <li>
-        either a <b>PNG</b> or an <b>TIF</b> file
-      </li>
-      <li>
-        at least <b>two</b> matching <b>nucleoli</b> in chromatin channel and electron microscopic image
-      </li>
-      <li>
-        all light microscopic channels should have the <b>same dimensions</b>
-      </li>
-      <li>
-        select <b>at least one image as Channel of interest</b>, otherwise you will be asked to select one during running the plugin
-      </li>
-    </p>
-  </li>
+</ul>
+    <ul>
+      <p align="justify; margin-left: 20em; padding-left: 20em">
+        <li>
+          electron microscopic image should look like the testing image <i>EM.png</i>
+        </li>
+        <li>
+          either a <b>PNG</b> or an <b>TIF</b> file
+        </li>
+        <li>
+          at least <b>two</b> matching <b>nucleoli</b> in chromatin channel and electron microscopic image
+        </li>
+        <li>
+          all light microscopic channels should have the <b>same dimensions</b>
+        </li>
+        <li>
+          select <b>at least one image as Channel of interest</b>, otherwise you will be asked to select one during running the plugin
+        </li>
+      </p>
+    </ul>
+<ul>
   <li>
     <p align="justify">
       If you have selected show process dialog, the process window of CSBDeep will be visible.
