@@ -2,7 +2,7 @@
 
 ## Install and run Fiji plugin DeepCLEM
 
-**1. Install Fiji**
+### 1. Install Fiji
 
 <ul>
   <p align="justify">
@@ -10,7 +10,7 @@
   </p>
 </ul>
 
-**2. Install Fiji plugin CSBDeep**
+### 2. Install Fiji plugin CSBDeep
 
 
 <ul>
@@ -19,16 +19,16 @@
   </p>
 </ul>
 
-**3. Clone this repo:**
+### 3. Clone this repo
 
-**3.1 Linux and macos**
+#### 3.1 Linux and macos
 
 ```sh
 git clone https://github.com/Rickmic/Deep_CLEM.git
 cd Deep_CLEM
 ```
 
-**3.2 Windows**
+#### 3.2 Windows
 
 <ul>
   <p align="justify">
@@ -47,15 +47,15 @@ cd Deep_CLEM
   </p>
 </ul>
 
-**4. Copy Deep_CLEM.py into your Fiji.app/plugins directory**
+### 4. Copy Deep_CLEM.py into your Fiji.app/plugins directory
 
-**4.1 Linux and macos**
+#### 4.1 Linux and macos
 
 ```sh
 cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 ```
 
-**4.2 Windows**
+#### 4.2 Windows
 
 <ul>
   <p align="justify">
@@ -63,7 +63,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   </p>
 </ul>
 
-**5. Restart Fiji**
+### 5. Restart Fiji
 
 <ul>
   <p align="justify">
@@ -71,7 +71,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   </p>
 </ul>
 
-**6. Start Deep_CLEM**
+### 6. Start Deep_CLEM
 
 
 <ul>
@@ -154,9 +154,9 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 
 
 
-# Train your own network
+## Train your own network
 
-**1. Set up the python environment**
+### 1. Set up the python environment
 
 <ul>
   <p align="justify">
@@ -195,7 +195,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   </p>
 </ul>
 
-**2. Preprocess images**
+### 2. Preprocess images
 
 <ul>
   <p align="justify">
