@@ -203,7 +203,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   </p>
 </ul>
 
-**3. Train network**
+### 3. Train network
 
 <ul>
   <p align="justify">
