@@ -4,20 +4,19 @@
 
 ### 1. Install Fiji
 
-<ul>
-  <p align="justify">
-    <a href="https://imagej.net/Fiji/Downloads">Source</a>
-  </p>
-</ul>
+
+<p align="justify">
+  <a href="https://imagej.net/Fiji/Downloads">Source</a>
+</p>
+
 
 ### 2. Install Fiji plugin CSBDeep
 
 
-<ul>
-  <p align="justify">
-    <a href="https://github.com/CSBDeep/CSBDeep_website/wiki/CSBDeep-in-Fiji-%E2%80%93-Installation">Source</a>
-  </p>
-</ul>
+<p align="justify">
+  <a href="https://github.com/CSBDeep/CSBDeep_website/wiki/CSBDeep-in-Fiji-%E2%80%93-Installation">Source</a>
+</p>
+
 
 ### 3. Clone this repo
 
@@ -30,8 +29,8 @@ cd Deep_CLEM
 
 #### 3.2 Windows
 
-<ul>
-  <p align="justify">
+<p align="justify">
+  <ul>
     <li>
       click the green button <i>Clone or Download</i> and Select <i>Download ZIP</i>
     </li>
@@ -44,8 +43,8 @@ cd Deep_CLEM
     <li>
       open the unziped directory 
     </li>
-  </p>
-</ul>
+  </ul>
+</p>
 
 ### 4. Copy Deep_CLEM.py into your Fiji.app/plugins directory
 
@@ -89,20 +88,14 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 </p>
 
 
-<ul>
-  <li>
-    <p align="justify">
+<p align="justify">
+  <ul>
+    <li>
       Select an electron microscopic image, a light microscopic image, several light microscopic channels of interest, a   working directory and a model file. After that select Run.
-    </p>
-  </li>
-  <li>
-    <p align="justify">
+    </li>
+    <li>
       The input images must fullfill the following creteria:
-    </p>
-  </li>
-</ul>
-    <ul>
-      <p align="justify; margin-left: 20em; padding-left: 20em">
+      <ul>
         <li>
           electron microscopic image should look like the testing image <i>EM.png</i>
         </li>
@@ -118,16 +111,13 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
         <li>
           select <b>at least one image as Channel of interest</b>, otherwise you will be asked to select one during running the plugin
         </li>
-      </p>
-    </ul>
-<ul>
-  <li>
-    <p align="justify">
+      </ul>
+    </li>
+    <li>
       If you have selected show process dialog, the process window of CSBDeep will be visible.
-    </p>
-  </li>
-  </li>
-</ul>
+    </li>
+  </ul>
+</p>
 
 
 
