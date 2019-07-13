@@ -100,7 +100,6 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       The input images must fullfill the following creteria:
     </p>
   </li>
-  <li>
     <p align="justify; margin-left: 20em; padding-left: 20em">
       <li>
         electron microscopic image should look like the testing image <i>EM.png</i>
