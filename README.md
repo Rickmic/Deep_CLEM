@@ -63,7 +63,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 ### 5. Restart Fiji
 
 <p align="justify">
-  Now you should be able to finde the plugin (Plugins > Deep_CLEM)
+  Now you should be able to find the plugin (Plugins > Deep_CLEM)
 </p>
 
 ### 6. Start Deep_CLEM
