@@ -18,7 +18,7 @@
 </p>
 
 
-### 3. Clone this repo
+### 3. Clone this repository
 
 #### 3.1 Linux and macos
 
@@ -168,7 +168,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       Install <a href="https://www.anaconda.com/distribution/">Anaconda</a>
     </li>
     <li>
-      Clone this repo if you haven't done this yet.
+      Clone this repository if you haven't done this yet.
     </li>
     <li>
       Navigate into the directory Deep_CLEM
