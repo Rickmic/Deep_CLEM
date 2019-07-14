@@ -201,7 +201,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 ### 2. Preprocess images
 
 <p align="justify">
-  Preprocess your images for training with the jupyter notebook _load_data.ipynb._ This jupyter notebokk script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>
+  Preprocess your images for training with the jupyter notebook _load_data.ipynb._ This jupyter notebook script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>
 </p>
 
 ### 3. Train network
