@@ -151,7 +151,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       </ul>
     </li>
     <li>
-      The color channels of all created images can be splitted and merged with <a href="https://fiji.sc/">Fiji</a> using the <a href="https://imagej.net/Color_Image_Processing">splitting multi channel images and merging images</a> option.
+      The color channels of all created images can be split and merged with <a href="https://fiji.sc/">Fiji</a> using the <a href="https://imagej.net/Color_Image_Processing">splitting multi channel images and merging images</a> option.
     </li>
   </ul>
 </p>
