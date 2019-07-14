@@ -128,7 +128,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify"> 
   <ul>
     <li>
-      After a short time (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted ligth microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK. 
+      After a short time, (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted light microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK. 
     </li
     <li>
       If the plugin is ready you can see <i>Command finished: Deep CLEM</i> in the Status Bar.
