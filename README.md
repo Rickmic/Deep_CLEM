@@ -93,7 +93,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       It will be recommended to test at first the correlation with example images. Use as electron microscopic image <i>EM.png</i>, as light microscopic image <i>Chromatin.png</i> and as channel of interest the image <i>Channel_of_interest.png</i>.
     </li>
     <li>
-      If you use own input images, they must fullfill the following creteria:
+      If you use own input images, they must fulfill the following criteria:
       <ul>
         <li>
           electron microscopic image should look like the testing image <i>EM.png</i>
