@@ -87,7 +87,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify">
   <ul>
     <li>
-      Select an electron microscopic image, a light microscopic image, several light microscopic channels of interest, a   working directory and a trained network. The working directory should be an empty, already existing directory and as trained network you can use the file <i>Trained_Network.zip</i>. After that select Run. 
+      Select an electron microscopic image, a light microscopic image, several light microscopic channels of interest, a   working directory and a trained network. The working directory should be an empty, already existing directory and as trained network you can use the file <i>Trained_Network.zip</i>. After that, select Run. 
     </li>
     <li>
       It will be recommended to test at first the correlation with example images. Use as electron microscopic image <i>EM.png</i>, as light microscopic image <i>Chromatin.png</i> and as channel of interest the image <i>Channel_of_interest.png</i>.
