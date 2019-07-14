@@ -140,7 +140,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
           The file <i>transformation_LM_image.xml</i> contains all transformations, that were made to the light microscopic images to align them to the electron microscopic images. You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another image.
         </li>
         <li>
-          Furthermore one correlated electron microscopic image (<i>SEM.tif</i>) was created.
+          Furthermore, one correlated electron microscopic image (<i>SEM.tif</i>) was created.
         </li>
         <li>
           The image <i>Chromatin.tif</i> contains the correlated image of the chromatin channel.
