@@ -41,7 +41,7 @@ cd Deep_CLEM
       open the directory with an explorer and unzip the file
     </li>
     <li>
-      open the unziped directory 
+      open the unzipped directory 
     </li>
   </ul>
 </p>
