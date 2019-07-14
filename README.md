@@ -134,10 +134,24 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       If the plugin is ready you can see <i>Command finished: Deep CLEM</i> in the Status Bar.
     </li>
     <li>
-      Deep CLEM has created two directories and one xml file in the working directory. The directory <i>COIoutput</i> contains the images of the channels of interest, that are already aligned to the electron microscopic image. The Directory <i>output</i> contains the predicted light microscopic image (pLM.tif) and the light microscopic image of the chromatin channel (rLM.tif). The file <i>transformation_LM_image.xml</i> contains all transformations, that are made to the light microscopic images to align them to the electron microscopic images.
+      Deep CLEM created several images and one xml file: 
+      <ul>
+        <li>
+          The file <i>transformation_LM_image.xml</i> contains all transformations, that were made to the light microscopic images to align them to the electron microscopic images. You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another image.
+        </li>
+        <li>
+          Furthermore one correlated electron microscopic image (<i>SEM.tif</i>) was created.
+        </li>
+        <li>
+          The image <i>Chromatin.tif</i> contains the correlated image of the chromatin channel.
+        </li>
+        <li>
+          In addition all selected images, that present an channel of interest were correlated and saved in the working directory.
+        </li>
+      </ul>
     </li>
     <li>
-      You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another, not selected image.
+      The color channels of all created images can be splitted and merged with <a href="https://fiji.sc/">Fiji</a> using the <a href="https://imagej.net/Color_Image_Processing">splitting multi channel images and merging images</a> option.
     </li>
   </ul>
 </p>
