@@ -146,7 +146,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
           The image <i>Chromatin.tif</i> contains the correlated image of the chromatin channel.
         </li>
         <li>
-          In addition all selected images, that present an channel of interest were correlated and saved in the working directory.
+          In addition, all selected images, that present a channel of interest were correlated and saved in the working directory.
         </li>
       </ul>
     </li>
