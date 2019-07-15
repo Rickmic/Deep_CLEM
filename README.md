@@ -1,6 +1,6 @@
 # Deep_CLEM
 
-## Install and run Fiji plugin DeepCLEM
+## Install and run Fiji plugin Deep_CLEM
 
 ### 1. Install Fiji
 
