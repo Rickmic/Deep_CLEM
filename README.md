@@ -134,7 +134,8 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       If the plugin is ready you can see <i>Command finished: Deep CLEM</i> in the Status Bar.
     </li>
     <li>
-      Deep CLEM created several images and one xml file: 
+      Deep CLEM created several images and one xml file:
+      <img align="middle" src="../assets/GUI3.png" height="250">
       <ul>
         <li>
           The file <i>transformation_LM_image.xml</i> contains all transformations, that were made to the light microscopic images to align them to the electron microscopic images. You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another image.
