@@ -2,7 +2,7 @@
 # @File(label="Select chromatin image", required=false, persist=true, style="extensions:tif/png") rLMfilepath
 # @File[] listOfPaths(label="Add different channels of interest from light microscope")
 # @File(label="working directory", required=false, persist=true, style=directory) workdir
-# @File(label="Model file", required=false, persist=true, style="extension:zip") modelFile
+# @File(label="Trained Network", required=false, persist=true, style="extension:zip") modelFile
 # @Boolean(label="Show progress dialog", required=false, value=true) showProgressDialog
 # @DatasetIOService io
 # @CommandService command
