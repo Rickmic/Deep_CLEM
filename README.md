@@ -32,7 +32,7 @@ cd Deep_CLEM
 <p align="justify">
   <ul>
     <li>
-      click the green button <i>Clone or Download</i> and Select <i>Download ZIP</i>
+      click the green button <i>Clone or Download</i> and then select <i>Download ZIP</i>
     </li>
     <li>
       save the ZIP file in a directory of your choice
