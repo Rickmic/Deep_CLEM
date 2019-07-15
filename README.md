@@ -147,6 +147,9 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
           The image <i>Chromatin.tif</i> contains the correlated image of the chromatin channel.
         </li>
         <li>
+          <i>overlay_EM_Chromatin.tif</i> shows the chromatin image in the blue channel and the electron microscopic image in the greyscale channel.
+        </li>
+        <li>
           In addition, all selected images, that present a channel of interest were correlated and saved in the working directory.
         </li>
       </ul>
