@@ -96,19 +96,19 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       If you use your own input images, they must fulfill the following criteria:
       <ul>
         <li>
-          electron microscopic image should look like the testing image <i>EM.png</i>
+          The electron microscopic image should look like the testing image <i>EM.png</i>.
         </li>
         <li>
-          either a <b>PNG</b> or an <b>TIF</b> file
+          All images should be a <b>PNG</b> or an <b>TIF</b> file.
         </li>
         <li>
-          at least <b>two</b> matching <b>nucleoli</b> in chromatin channel and electron microscopic image
+          The chromatin channel and the electron microscopic image should have at least <b>two</b> matching <b>nucleoli</b>.
         </li>
         <li>
-          all light microscopic channels should have the <b>same dimensions</b>
+          All light microscopic channels should have the <b>same dimensions</b>.
         </li>
         <li>
-          select <b>at least one image as Channel of interest</b>, otherwise you will be asked to select one during running the plugin
+          Select <b>at least one image as Channel of interest</b>, otherwise you will be asked to select one during running the plugin.
         </li>
       </ul>
     </li>
