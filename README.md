@@ -105,7 +105,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
           The chromatin channel and the electron microscopic image should have at least <b>three</b> matching <b>nucleoli</b>.
         </li>
         <li>
-          As chromatin channel, a RGB image with the chromatin informations in the blue channel is reqired.
+          As chromatin channel, a RGB image with the chromatin informations in the blue channel is required.
         <li>
           All light microscopic channels should have the <b>same dimensions</b>.
         </li>
