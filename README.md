@@ -115,7 +115,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       </ul>
     </li>
     <li>
-      If you have selected show process dialog, the process window of CSBDeep will be visible.
+      If you have selected <i>show process dialog</i>, the process window of CSBDeep will be visible.
     </li>
     <li>
       After a short time, (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted light microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK. 
