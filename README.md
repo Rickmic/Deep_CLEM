@@ -99,7 +99,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
           The electron microscopic image should look like the testing image <i>EM.png</i>.
         </li>
         <li>
-          All images should be a <b>PNG</b> or an <b>TIF</b> file.
+          All images should be a .png or a .tif file.
         </li>
         <li>
           The chromatin channel and the electron microscopic image should have at least <b>three</b> matching <b>nucleoli</b>.
