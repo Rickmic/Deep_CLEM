@@ -118,7 +118,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       If you have selected <i>show process dialog</i>, the process window of CSBDeep will be visible.
     </li>
     <li>
-      After a short time, (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted light microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with OK. 
+      After a short time, (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted light microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with <i>OK</i>. 
     </li>
   </ul>
 </p>
@@ -140,7 +140,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       <img src="../assets/GUI3.png">
       <ul>
         <li>
-          The file <i>transformation_LM_image.xml</i> contains all transformations, that were made to the light microscopic images to align them to the electron microscopic images. You can use the xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another image.
+          The file <i>transformation_LM_image.xml</i> contains all transformations, that were made to the light microscopic images to align them to the electron microscopic images. You can use the .xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another image.
         </li>
         <li>
           Furthermore, one correlated electron microscopic image (<i>SEM.tif</i>) was created.
@@ -200,7 +200,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   ```
   
 <p align="justify">
-  This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may   have to install a different tensorflow version as in the yml file.
+  This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may   have to install a different tensorflow version as in the .yml file.
 </p>
 
 
@@ -213,5 +213,5 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 ### 3. Train network
 
 <p align="justify">
-  Train your network with the jupyter notebook <i>train_network.ipynb</i>, that is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>.
+  Train your network with the jupyter notebook <i>train_network.ipynb</i>, based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>.
 </p>
