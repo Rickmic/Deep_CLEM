@@ -309,7 +309,7 @@ for fileName in COIfiles:
 # remove all created directorys
 
 # If you need aditional files uncomment the following commands
-shutil.rmtree(registration_inputdir) # uncomment if you need the predicted image
+# shutil.rmtree(registration_inputdir) # uncomment if you need the predicted image
 shutil.rmtree(registration_outputdir) # uncomment if you need the registered, predicted and real image, that shows the chromatin channel
 shutil.rmtree(transformdir) # uncomment if you need the transforms (XML-files) for EM, rLM and COI's
 shutil.rmtree(transformation_inputdir)
