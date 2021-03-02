@@ -173,7 +173,7 @@ reference_name = "pLM.tif"
 use_shrinking_constraint = 0
 p = Register_Virtual_Stack_MT.Param()
 # Gaussian blur:
-p.sift.initialSigma = 1.6
+p.sift.initialSigma = 1.8
 # Steps per scale octave:
 p.sift.steps = 3
 # minimum image size:
@@ -226,20 +226,22 @@ i = 0
 
 # save one xml file for each COI image with the corresponding name.
 for channel in listOfPathslist:
-	# save cLM image
-	cLMfilepath = listOfPathslist[i]
-	cLMfilepath = str(cLMfilepath)
-	cLMname = os.path.basename(cLMfilepath)
-	filename, file_extension = os.path.splitext(cLMname)
-	cLM = IJ.openImage(cLMfilepath)
-	savecLMfilepath = os.path.join(workdir, "transformation_input", filename + ".tif")
-	fs = FileSaver(cLM) 
-	fs.saveAsTiff(savecLMfilepath)
-	#duplicate rLM.xml file in transform
-	i = i +1
-	cLMxmlName = filename + ".xml"
-	clmXmlPath= os.path.join(transform, cLMxmlName)
-	shutil.copy(rlmXmlPath, clmXmlPath) 
+	str_channel = channel.toString()
+	if ".png" in str_channel or ".PNG" in str_channel or ".tif" in str_channel or ".tiff" in str_channel: # check if channel is an image
+		# save cLM image
+		cLMfilepath = listOfPathslist[i]
+		cLMfilepath = str(cLMfilepath)
+		cLMname = os.path.basename(cLMfilepath)
+		filename, file_extension = os.path.splitext(cLMname)
+		cLM = IJ.openImage(cLMfilepath)
+		savecLMfilepath = os.path.join(workdir, "transformation_input", filename + ".tif")
+		fs = FileSaver(cLM) 
+		fs.saveAsTiff(savecLMfilepath)
+		#duplicate rLM.xml file in transform
+		i = i +1
+		cLMxmlName = filename + ".xml"
+		clmXmlPath= os.path.join(transform, cLMxmlName)
+		shutil.copy(rlmXmlPath, clmXmlPath) 
 
 # move and rename rLM.xml transformation_LM_image.xml
 transformation_LM_imageXmlPath = os.path.join(workdir, "transformation_LM_image.xml")
