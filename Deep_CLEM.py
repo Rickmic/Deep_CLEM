@@ -173,7 +173,7 @@ reference_name = "pLM.tif"
 use_shrinking_constraint = 0
 p = Register_Virtual_Stack_MT.Param()
 # Gaussian blur:
-p.sift.initialSigma = 1.8
+p.sift.initialSigma = 3.5
 # Steps per scale octave:
 p.sift.steps = 3
 # minimum image size:
@@ -187,13 +187,13 @@ p.sift.fdSize = 8
 # feature descriptor orientation bins:
 p.sift.fdBins = 8
 # closest/next closest ratio:
-p.rod = 0.92
+p.rod = 0.99
 
 ### Geometric Consensus Filter:
 # maximal alignment error:
-p.maxEpsilon = 25.00
+p.maxEpsilon = 30.00
 # The "inlier ratio":
-p.minInlierRatio = 0.05
+p.minInlierRatio = 0.005
 # Implemented transformation models for choice 
 # 0=TRANSLATION, 1=RIGID, 2=SIMILARITY, 3=AFFINE, 4=ELASTIC, 5=MOVING_LEAST_SQUARES 
 p.registrationModelIndex = 2 
@@ -201,7 +201,7 @@ p.registrationModelIndex = 2
 # 0=TRANSLATION, 1=RIGID, 2=SIMILARITY, 3=AFFINE
 p.featuresModelIndex = 2
 # interpolate (Boolean value):
-p.interpolate = 0
+p.interpolate = 1
 
 # run plugin 
 Register_Virtual_Stack_MT.exec(source_dir, target_dir, transf_dir, 
