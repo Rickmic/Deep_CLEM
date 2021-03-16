@@ -4,6 +4,7 @@
 # @File(label="working directory", required=false, persist=true, style=directory) workdir
 # @File(label="Trained Network", required=false, persist=true, style="extension:zip") modelFile
 # @Boolean(label="Show progress dialog", required=false, value=true) showProgressDialog
+# @Float(label="gaussian blur for registration",style="slider", min=0.4, max=6.0, value=3.6, persist=false, stepSize=0.1) gaussian_blur
 # @DatasetIOService io
 # @CommandService command
 # @ModuleService module
@@ -173,7 +174,7 @@ reference_name = "pLM.tif"
 use_shrinking_constraint = 0
 p = Register_Virtual_Stack_MT.Param()
 # Gaussian blur:
-p.sift.initialSigma = 3.5
+p.sift.initialSigma = gaussian_blur
 # Steps per scale octave:
 p.sift.steps = 3
 # minimum image size:
