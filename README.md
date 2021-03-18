@@ -203,14 +203,24 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may have to install a different tensorflow version as in the .yml file.
 </p>
 
+### 2. Generate training data
 
-### 2. Preprocess images
+<p align="justify">
+  <ul>
+    <li>
+      If you run the plugin Deep_CLEM, the following window should be visible:
+    </li>
+  </ul>
+</p>
+
+
+### 3. Preprocess images
 
 <p align="justify">
   Preprocess your images for training with the jupyter notebook <i>load_data.ipynb.</i> This jupyter notebook script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>.
 </p>
 
-### 3. Train network
+### 4. Train network
 
 <p align="justify">
   Train your network with the jupyter notebook <i>train_network.ipynb</i>, based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>.
