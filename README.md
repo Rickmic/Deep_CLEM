@@ -203,12 +203,21 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may have to install a different tensorflow version as in the .yml file.
 </p>
 
-### 2. Generate training data
+### 2. Training data
 
 <p align="justify">
   <ul>
     <li>
-      If you run the plugin Deep_CLEM, the following window should be visible:
+      For training are 60-100 correlated images neccessary. It is possible to use images from Z-stacks.
+    </li>
+    <li>
+      Electron and fluorescent microscopic images should be stored in two different folders.
+    </li>
+    <li>
+      The electron and fluorescent microscopic images could be greyscale or RGB images.
+    </li>
+    <li>
+      Each pair of electron and fluorescent microscopic images should be named with the same name.
     </li>
   </ul>
 </p>
