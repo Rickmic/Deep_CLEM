@@ -232,5 +232,5 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 ### 4. Train network
 
 <p align="justify">
-  Train your network with the jupyter notebook <i>train_network.ipynb</i>, based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>.
+  Train your network with the jupyter notebook <a href="https://nbviewer.jupyter.org/github/Rickmic/Deep_CLEM/blob/master/train_network.ipynb"><i>train_network.ipynb</i></a>, based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>.
 </p>
