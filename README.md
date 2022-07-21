@@ -102,7 +102,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
           All images should be a .png or a .tif file.
         </li>
         <li>
-          The chromatin channel and the electron microscopic image should have at least <b>three</b> matching <b>nucleoli</b>.
+          The chromatin channel and the electron microscopic image should have at least <b>three</b> matching <b>nuclei</b>.
         </li>
         <li>
           As chromatin channel, a RGB image with the chromatin informations in the blue channel is required.
