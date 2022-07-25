@@ -188,7 +188,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify">
   <ul>
     <li>
-      create a new conda environment with all requirements for the two python scripts
+      create a new conda environment with all requirements for the two python notebooks:
     </li>
   </ul>
 </p>
@@ -200,7 +200,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   ```
   
 <p align="justify">
-  This environment was tested under <i>Ubuntu 16.04.5 LTS</i> with CUDA version <i>9.2.148</i>. If you use another CUDA version you may have to install a different tensorflow version as in the .yml file.
+  This environment file will install recent versions of Tensorflow, CUDA and CSBDeep and thus should work with the newest GPU hardware. The notebooks were tested under Ubuntu 20.04 with Tensorflow 2.9.1, CUDA 11.7 and CSBDeep 0.7.2. If you encounter problems, you may have to specify these versions explicitly in the .yml file.
 </p>
 
 ### 2. Training data
@@ -208,7 +208,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify">
   <ul>
     <li>
-      For training are 60-100 correlated images neccessary. It is possible to use images from Z-stacks.
+      For training, 60-100 correlated images are neccessary. It is possible to use images from Z-stacks.
     </li>
     <li>
       Electron and fluorescent microscopic images should be stored in two different folders.
