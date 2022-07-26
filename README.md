@@ -1,4 +1,14 @@
-# Deep_CLEM
+# DeepCLEM
+
+This repository contains the code and data for
+
+### DeepCLEM: automated registration for correlative light and electron microscopy using deep learning
+
+*Rick Seifert, Sebastian M. Markert, Sebastian Britz, Veronika Perschin, Christoph Erbacher, Christian Stigloher and Philip Kollmannsberger*
+
+F1000Research 9:1275 (2020), https://doi.org/10.12688/f1000research.27158.1
+
+This work was part of the BSc thesis project of Rick Seifert in the Computational Image Analysis group of Philip Kollmannsberger at the [Center for Computational and Theoretical Biology](https://www.biozentrum.uni-wuerzburg.de/cctb/cctb/) and the [Imaging Core Facility](https://www.biozentrum.uni-wuerzburg.de/em/startseite/) of the University of Würzburg, performed in 2019.
 
 ## Install and run Fiji plugin Deep_CLEM
 
