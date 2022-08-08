@@ -235,7 +235,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
     </li>
   </ul>
 </p>
-
+This repository contains a small demo dataset to test if the training works. The full training dataset used in the paper is available on Zenodo: https://zenodo.org/record/6973994#.YvD2lOxBzQ0
 
 ### 3. Preprocess images
 
