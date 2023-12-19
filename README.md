@@ -199,22 +199,39 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 ```sh
   cd Deep_CLEM
   ```
+
 <p align="justify">
   <ul>
     <li>
-      create a new conda environment with all requirements for the two python notebooks:
+      Install <a href="https://github.com/mamba-org/mamba/">Mamba</a> for fast dependency solving:
     </li>
   </ul>
 </p>
 
   ```sh
   conda activate
-  conda env create --file DeepCLEM.yml
+  conda install mamba -n base -c conda-forge
+  ```
+
+<p align="justify">
+  <ul>
+    <li>
+      Create a new conda environment with all requirements for the two python notebooks:
+    </li>
+  </ul>
+</p>
+
+  ```sh
+
+  mamba env create --file DeepCLEM.yml
   conda activate DeepCLEM
   ```
   
 <p align="justify">
-  This environment file will install recent versions of Tensorflow, CUDA and CSBDeep and thus should work with the newest GPU hardware. The notebooks were tested under Ubuntu 20.04 with Tensorflow 2.9.1, CUDA 11.7 and CSBDeep 0.7.2. If you encounter problems, you may have to specify these versions explicitly in the .yml file.
+  This environment file will install recent versions of Tensorflow, CUDA and CSBDeep 
+  and thus should work with the newest GPU hardware. The notebooks were tested under 
+  Windows 10 with Tensorflow 2.3.0, CUDA 11.3 and CSBDeep 0.7.4. If you encounter problems, 
+  you may have to specify these versions explicitly in the .yml file.
 </p>
 
 ### 2. Training data

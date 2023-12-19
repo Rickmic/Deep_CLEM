@@ -1,15 +1,15 @@
 name: DeepCLEM
 channels:
   - conda-forge
+  - defaults
 dependencies:
+  - numpy=1.19.2
+  - tensorflow=2.3
+  - pyimagej
+  - ca-certificates
+  - certifi
+  - openssl
   - csbdeep
   - jupyter
   - opencv
-  - openjdk=8
-  - pyimagej
-  - python
-  - scikit-image
-  - tensorflow
-
-
-
+  - imageio
