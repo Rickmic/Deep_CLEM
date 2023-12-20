@@ -17,9 +17,8 @@ This work was part of the BSc thesis project of Rick Seifert in the Computationa
 </p>
 
 ----
-
-## (A) Install and run Fiji plugin Deep_CLEM
 <a id="install"></a>
+## (A) Install and run Fiji plugin Deep_CLEM
 
 ### 1. Install Fiji
 
@@ -182,9 +181,8 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 
 ----
 
-
-## (B) Train your own network
 <a id="train"></a>
+## (B) Train your own network
 
 ### 1. Set up the python environment
 
