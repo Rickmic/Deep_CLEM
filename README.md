@@ -234,7 +234,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify">
   This environment file will install recent versions of Tensorflow, CUDA and CSBDeep 
   and thus should work with the newest GPU hardware. The notebooks were tested under 
-  Windows 10 with Tensorflow 2.3.0, CUDA 11.3 and CSBDeep 0.7.4. If you encounter problems, 
+  Windows 10, Linux and Mac M1 with Tensorflow 2.3.0, CUDA 11.3 and CSBDeep 0.7.4. If you encounter problems, 
   you may have to specify these versions explicitly in the .yml file.
 </p>
 
