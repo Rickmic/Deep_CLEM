@@ -8,19 +8,22 @@ This repository contains the code and data for
 
 F1000Research 9:1275 (2020), https://doi.org/10.12688/f1000research.27158.1
 
+> Below you find information how to [install and run](#install) the Fiji plugin with the included pretrained network model, as well as instructions how to [train a custom model](#train) on your own data. If you need help or have questions, feel free to open an <a href="https://github.com/CIA-CCTB/Deep_CLEM/issues">issue</a> or contact the corresponding author by <a href="mailto:philipk@gmx.net">email</a>. For general questions related to Fiji or CSBDeep, we recommend the <a href="https://forum.image.sc/">image.sc</a> forum.
+
 This work was part of the BSc thesis project of Rick Seifert in the Computational Image Analysis group at the [Center for Computational and Theoretical Biology](https://www.biozentrum.uni-wuerzburg.de/cctb/cctb/) together with the [Imaging Core Facility](https://www.biozentrum.uni-wuerzburg.de/em/startseite/) of the University of Würzburg, performed in 2019.
 
 <p align="center"> 
   <img src="https://f1000researchdata.s3.amazonaws.com/manuscripts/30002/0db554d6-8849-4105-ac0c-0a019fef925d_figure1.gif" width=450px>
 </p>
 
-## Install and run Fiji plugin Deep_CLEM
+----
+<a id="install"></a>
+## (A) Install and run Fiji plugin Deep_CLEM
 
 ### 1. Install Fiji
 
-
 <p align="justify">
-  <a href="https://imagej.net/Fiji/Downloads">Source</a>
+Please download and install Fiji following the <a href="https://imagej.net/Fiji/Downloads">instructions</a>.
 </p>
 
 
@@ -28,16 +31,16 @@ This work was part of the BSc thesis project of Rick Seifert in the Computationa
 
 
 <p align="justify">
-  <a href="https://github.com/CSBDeep/CSBDeep_website/wiki/CSBDeep-in-Fiji-%E2%80%93-Installation">Source</a>
+Please download and install the CSBDeep plugin following the <a href="https://github.com/CSBDeep/CSBDeep_website/wiki/CSBDeep-in-Fiji-%E2%80%93-Installation">instructions</a>
 </p>
 
 
 ### 3. Clone this repository
 
-#### 3.1 Linux and macos
+#### 3.1 Linux and MacOS
 
 ```sh
-git clone https://github.com/Rickmic/Deep_CLEM.git
+git clone https://github.com/CIA-CCTB/Deep_CLEM.git
 cd Deep_CLEM
 ```
 
@@ -101,25 +104,25 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify">
   <ul>
     <li>
-      Select an electron microscopic image, a light microscopic image, several light microscopic channels of interest, a   working directory and a trained network. The working directory should be an empty, already existing directory and as trained network you can use the file <i>Trained_Network.zip</i>. After that, select Run. 
+      Select an electron microscopic image and corresponding light microscopic image as well as one or more light microscopic channels of interest, a working directory and a trained model. The working directory should be an empty, already existing directory and as trained network you can use the file <i>Trained_Network.zip</i>. After that, select Run. 
     </li>
     <li>
-      It will be recommended to test at first the correlation with example images. Use as electron microscopic image <i>EM.png</i>, as light microscopic image <i>Chromatin.png</i> and as channel of interest the image <i>Channel_of_interest.png</i>. This images were taken by Sebastian Markert (Image Core Facility University of Wuerzburg).
+      It is recommended to test at first the correlation with example images. Use as electron microscopic image <i>EM.png</i>, as light microscopic image <i>Chromatin.png</i> and as channel of interest the image <i>Channel_of_interest.png</i>. These images were taken by Sebastian Markert (Image Core Facility University of Wuerzburg).
     </li>
     <li>
       If you use your own input images, they must fulfill the following criteria:
       <ul>
         <li>
-          The electron microscopic image should look like the testing image <i>EM.png</i>.
+          The electron microscopic image should have similar contrast and resolution as the test image <i>EM.png</i> if you use the pretrained network included with DeepCLEM. If your EM images look very different, you can train your own model as described below.
         </li>
         <li>
-          All images should be a .png or a .tif file.
+          All image files should be either in .png or .tif format.
         </li>
         <li>
-          The chromatin channel and the electron microscopic image should have at least <b>three</b> matching <b>nuclei</b>.
+          The chromatin channel and the electron microscopic image need to have at least <b>three</b> matching <b>nuclei</b> for the automated registration to work. Alternatively, other stains than chromatin can be used for prediction and correlation if you train your own network model. 
         </li>
         <li>
-          As chromatin channel, a RGB image with the chromatin informations in the blue channel is required.
+          As chromatin channel, a RGB image with the chromatin information in the blue channel is required. If your chromatin image is in greyscale format, you can convert it to RGB using Fiji.
         <li>
           All light microscopic channels should have the <b>same dimensions</b>.
         </li>
@@ -132,7 +135,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       If you have selected <i>show process dialog</i>, the process window of CSBDeep will be visible.
     </li>
     <li>
-      After a short time, (depending on your CPU/GPU) another window will be visible. This window shows you the electron microscopic and the predicted light microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with <i>OK</i>. 
+      After a short time, (depending on your CPU/GPU), a new window will appear. This window shows you the electron microscopic and the predicted light microscopic image. Check if the predicted light microscopic image shows roughly the shape of the chromatin in the electron microscopic image and proceed with <i>OK</i>. 
     </li>
   </ul>
 </p>
@@ -154,7 +157,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       <img src="../assets/GUI3.png">
       <ul>
         <li>
-          The file <i>transformation_LM_image.xml</i> contains all transformations, that were made to the light microscopic images to align them to the electron microscopic images. You can use the .xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another image.
+          The file <i>transformation_LM_image.xml</i> contains all transformations that were applied to the light microscopic images to align them to the electron microscopic images. You can use the .xml file for example with the Fiji plugin <a href="https://imagej.net/Transform_Virtual_Stack_Slices">Transform Virtual Stack Slices</a> to repeat the transformation with another image.
         </li>
         <li>
           Furthermore, one correlated electron microscopic image (<i>SEM.tif</i>) was created.
@@ -166,7 +169,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
           <i>overlay_EM_Chromatin.tif</i> shows the chromatin image in the blue channel and the electron microscopic image in the greyscale channel.
         </li>
         <li>
-          In addition, all selected images, that present a channel of interest were correlated and saved in the working directory.
+          In addition, all selected images that present a channel of interest were correlated and saved in the working directory.
         </li>
       </ul>
     </li>
@@ -176,9 +179,10 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   </ul>
 </p>
 
+----
 
-
-## Train your own network
+<a id="train"></a>
+## (B) Train your own network
 
 ### 1. Set up the python environment
 
@@ -230,7 +234,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
 <p align="justify">
   This environment file will install recent versions of Tensorflow, CUDA and CSBDeep 
   and thus should work with the newest GPU hardware. The notebooks were tested under 
-  Windows 10 with Tensorflow 2.3.0, CUDA 11.3 and CSBDeep 0.7.4. If you encounter problems, 
+  Windows 10, Linux and Mac M1 with Tensorflow 2.3.0, CUDA 11.3 and CSBDeep 0.7.4. If you encounter problems, 
   you may have to specify these versions explicitly in the .yml file.
 </p>
 
@@ -248,7 +252,7 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
       The electron and fluorescent microscopic images could be greyscale or RGB images.
     </li>
     <li>
-      Each pair of electron and fluorescent microscopic images should be named with the same name.
+      Each pair of electron and fluorescent microscopic images should be named with the same filename.
     </li>
   </ul>
 </p>
@@ -257,11 +261,11 @@ This repository contains a small demo dataset to test if the training works. The
 ### 3. Preprocess images
 
 <p align="justify">
-  For preprocessing you have to start <a href="https://jupyter.readthedocs.io/en/latest/running.html">jupyter notebook</a> and Preprocess your images for training with the jupyter notebook <a href="https://nbviewer.jupyter.org/github/Rickmic/Deep_CLEM/blob/master/load_data.ipynb"><i>load_data.ipynb.</i></a> This jupyter notebook script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>.
+  For preprocessing you have to start <a href="https://jupyter.readthedocs.io/en/latest/running.html">jupyter notebook</a> and preprocess your images for training with the jupyter notebook <a href="https://github.com/CIA-CCTB/Deep_CLEM/blob/master/load_data.ipynb"><i>load_data.ipynb.</i></a> This jupyter notebook script is based on <a href="https://github.com/CSBDeep/CSBDeep/blob/master/examples/denoising3D/1_datagen.ipynb">this script</a>.
 </p>
 
 ### 4. Train network
 
 <p align="justify">
-  Train your network with the jupyter notebook <a href="https://nbviewer.jupyter.org/github/Rickmic/Deep_CLEM/blob/master/train_network.ipynb"><i>train_network.ipynb</i></a> , based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>.
+  Train your network with the jupyter notebook <a href="https://github.com/CIA-CCTB/Deep_CLEM/blob/master/train_network.ipynb"><i>train_network.ipynb</i></a> , based on <a href="https://github.com/CSBDeep/CSBDeep/blob/master/examples/denoising3D/2_training.ipynb">this script</a>.
 </p>
