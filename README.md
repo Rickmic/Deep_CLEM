@@ -40,7 +40,7 @@ Please download and install the CSBDeep plugin following the <a href="https://gi
 #### 3.1 Linux and MacOS
 
 ```sh
-git clone https://github.com/Rickmic/Deep_CLEM.git
+git clone https://github.com/CIA-CCTB/Deep_CLEM.git
 cd Deep_CLEM
 ```
 
@@ -261,11 +261,11 @@ This repository contains a small demo dataset to test if the training works. The
 ### 3. Preprocess images
 
 <p align="justify">
-  For preprocessing you have to start <a href="https://jupyter.readthedocs.io/en/latest/running.html">jupyter notebook</a> and Preprocess your images for training with the jupyter notebook <a href="https://nbviewer.jupyter.org/github/Rickmic/Deep_CLEM/blob/master/load_data.ipynb"><i>load_data.ipynb.</i></a> This jupyter notebook script is based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/1_datagen.ipynb">this script</a>.
+  For preprocessing you have to start <a href="https://jupyter.readthedocs.io/en/latest/running.html">jupyter notebook</a> and preprocess your images for training with the jupyter notebook <a href="https://github.com/CIA-CCTB/Deep_CLEM/blob/master/load_data.ipynb"><i>load_data.ipynb.</i></a> This jupyter notebook script is based on <a href="https://github.com/CSBDeep/CSBDeep/blob/master/examples/denoising3D/1_datagen.ipynb">this script</a>.
 </p>
 
 ### 4. Train network
 
 <p align="justify">
-  Train your network with the jupyter notebook <a href="https://nbviewer.jupyter.org/github/Rickmic/Deep_CLEM/blob/master/train_network.ipynb"><i>train_network.ipynb</i></a> , based on <a href="https://nbviewer.jupyter.org/url/csbdeep.bioimagecomputing.com/examples/denoising3D/2_training.ipynb">this script</a>.
+  Train your network with the jupyter notebook <a href="https://github.com/CIA-CCTB/Deep_CLEM/blob/master/train_network.ipynb"><i>train_network.ipynb</i></a> , based on <a href="https://github.com/CSBDeep/CSBDeep/blob/master/examples/denoising3D/2_training.ipynb">this script</a>.
 </p>
