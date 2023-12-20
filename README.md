@@ -8,13 +8,18 @@ This repository contains the code and data for
 
 F1000Research 9:1275 (2020), https://doi.org/10.12688/f1000research.27158.1
 
+> Below you find information how to [install and run](#install) the Fiji plugin with the included pretrained network model, as well as instructions how to [train a custom model](#train) on your own data. If you need help or have questions, feel free to open an <a href="https://github.com/CIA-CCTB/Deep_CLEM/issues">issue</a> or contact the corresponding author by <a href="mailto:philipk@gmx.net">email</a>. For general questions related to Fiji or CSBDeep, we recommend the <a href="https://forum.image.sc/">image.sc</a> forum.
+
 This work was part of the BSc thesis project of Rick Seifert in the Computational Image Analysis group at the [Center for Computational and Theoretical Biology](https://www.biozentrum.uni-wuerzburg.de/cctb/cctb/) together with the [Imaging Core Facility](https://www.biozentrum.uni-wuerzburg.de/em/startseite/) of the University of Würzburg, performed in 2019.
 
 <p align="center"> 
   <img src="https://f1000researchdata.s3.amazonaws.com/manuscripts/30002/0db554d6-8849-4105-ac0c-0a019fef925d_figure1.gif" width=450px>
 </p>
 
-## Install and run Fiji plugin Deep_CLEM
+----
+
+## (A) Install and run Fiji plugin Deep_CLEM
+<a id="install"></a>
 
 ### 1. Install Fiji
 
@@ -175,9 +180,11 @@ cp Deep_CLEM.py [path to Fiji]/Fiji.app/plugins/
   </ul>
 </p>
 
+----
 
 
-## Train your own network
+## (B) Train your own network
+<a id="train"></a>
 
 ### 1. Set up the python environment
 
