@@ -34,6 +34,9 @@ Please download and install Fiji following the <a href="https://imagej.net/Fiji/
 Please download and install the CSBDeep plugin following the <a href="https://github.com/CSBDeep/CSBDeep_website/wiki/CSBDeep-in-Fiji-%E2%80%93-Installation">instructions</a>. For newer versions of Fiji select in 3. <i>Manage Update Sites</i> next to <i>CSBDeep</i> also <i>TensorFlow</i>:
 </p>
 
+<p align="center"> 
+  <img src="../assets/tensorflow_installation.png" width=700px>
+</p>
 
 ### 3. Clone this repository
 
